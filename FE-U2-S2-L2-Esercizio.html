@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
 
@@ -15,42 +15,6 @@ Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, table
 Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
 Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
 
-Esercizi:
-
-1) Implementa una navbar con questi elementi di menu:
-Home
-Saldi
-Welcome Summer
-Last Minute
-Recensioni
-
-Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
-
-2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
-
-3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
-una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
-
-Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
-
-4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
-
-In questa sezione dovranno esserci:
-
-4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
-3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
-2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
-
-le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
-
-5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
-
-In questa sezione dovranno esserci:
-
-6 card per destinazioni per linea a schermo extra large
-3 card per destinazioni per linea a schermo grande (desktop)
-2 card per destinazioni per linea a schermo medio (tablet)
-2 card per destinazioni per linea a schermo piccolo (mobile)
 
 6) Implementa la sezione "Offerta del giorno". Qui avrai:
 
@@ -75,10 +39,6 @@ Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recension
 
 11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
 
-
-
-EXTRAS
-
 12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
 
 13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
@@ -92,8 +52,477 @@ EXTRAS
 17) Crea una funzione che rimuova tutte le "card" dalla pagina
 
 -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eveline-R</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --azzurro: #76CCF3;
+        }
+    </style>
 </head>
 
-<body></body>
+<body>
+
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg bg-light">
+
+        <div class="container" style="max-width: 80%;">
+
+            <!-- Logo-->
+            <a class="d-flex align-items-center" href="#">
+                <img src="img/logo.png" alt="Logo" width="120">
+            </a>
+
+            <!-- button -->
+            <button class="navbar-toggler focus-ring" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav text-end">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saldi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Welcome Summer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Last Minute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recensioni</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Prenota -->
+    <sectin>
+        <div class="container border border-0 rounded mt-5 text-center bg-light py-5 shadow-sm" style="max-width: 80%;">
+
+            <h1 class="pb-2 text-muted display-1 d-flex flex-wrap justify-content-center align-items-center border-bottom border-dark-subtle">
+                Eveline-R <small class="text-muted fs-4">— feel the Freedom</small>
+            </h1>
+
+            <p class="fst-italic text-muted fs-3">Scopri le destinazioni piu calde del momento!</p>
+
+
+            <button type="button" class="mt-4 btn text-white fw-bold px-4 py-2"
+                style="background:var(--azzurro);">Prenota
+                ora</button>
+
+        </div>
+    </sectin>
+
+    <!-- saldi -->
+    <section>
+        <div class="container mt-5" style="max-width: 80%;">
+
+            <h3 class="mb-3">Saldi</h3>
+
+            <div class="row g-3">
+
+                <div class="col-6">
+
+                    <div class="card border-2" style="border-color: var(--azzurro);">
+
+                        <img src="img/ima.jpg" class="card-img-top" alt="img">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm" style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card border-2" style="border-color: var(--azzurro);">
+
+                        <img src="img/ima.jpg" class="card-img-top" alt="img">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm" style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card border-2" style="border-color: var(--azzurro);">
+
+                        <img src="img/ima.jpg" class="card-img-top" alt="img">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm" style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card border-2" style="border-color: var(--azzurro);">
+
+                        <img src="img/ima.jpg" class="card-img-top" alt="img">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm" style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- summer -->
+    <section>
+        <div class="container mt-5" style="max-width: 80%;">
+
+            <h3 class="mb-3">Welcome Summer</h3>
+
+            <div class="row g-3">
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm" style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm "
+                                style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm "
+                                style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm "
+                                style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm "
+                                style="background:var(--azzurro);">Prenota</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card shadow-lg rounded">
+
+                        <div>
+                            <img src="img/ima.jpg" class="card-img-top" alt="img">
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Titolo</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, blanditiis. Quibusdam,
+                                iste
+                                assumenda quidem suscipit reprehenderit atque neque.
+                            </p>
+                            <button type="button" class="btn btn-sm "
+                                style="background:var(--azzurro);">Prenota</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- offerta in lavorazione -->
+    <section>
+    </section>
+
+    <!-- Last Minute -->
+    <section>
+        <div class="container mt-5" style="max-width: 80%;">
+
+            <h3 class="mb-3">Last Minute</h3>
+
+            <div class="row row-cols-2 g-3">
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card border-0 shadow-sm rounded">
+                        <img src="img/ima.jpg" class="card" alt="img">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- opinion -->
+    <section>
+        <div class="container mt-5" style="max-width: 80%;">
+
+            <h4 class="text-center">Dicono di noi</h4>
+
+            <div class="row g-4">
+
+                <div class="col-12">
+                    <div class="d-flex gap-3">
+                        <img src="img/ava.png" class="rounded-circle border border-info border-2" width="60" height="60"
+                            alt="avatar">
+                        <div>
+                            <strong>Username</strong>
+                            <p class="small text-muted mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae. Lorem ipsum,
+                                dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex gap-3">
+                        <img src="img/ava.png" class="rounded-circle border border-info border-2" width="60" height="60"
+                            alt="avatar">
+                        <div>
+                            <strong>Username</strong>
+                            <p class="small text-muted mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex gap-3">
+                        <img src="img/ava.png" class="rounded-circle border border-info border-2" width="60" height="60"
+                            alt="avatar">
+                        <div>
+                            <strong>Username</strong>
+                            <p class="small text-muted mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Quam fuga id sit, harum nihil, recusandae architecto optio nobis aut impedit dignissimos
+                                laboriosam fugiat animi magni odit suscipit. Quia, commodi repudiandae.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="navbar navbar-expand-lg bg-dark mt-4">
+
+        <div class="container mt-5 mb-4" style="max-width:70%;">
+            <div class="col text-center  text-light">
+                <button class="btn btn-dark text-secondary border border-secondary mb-3">Contattaci</button>
+                <p class="small">© 2021 Kalina Travel LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+</body>
 
 </html>
